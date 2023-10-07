@@ -40,16 +40,25 @@ char *intTohex(int num) {
       symbol = rem + '0';
     }
     result[i] = symbol;
-
-    if (num == 0) {
-      result[i] = char(32);
-    }
     num = num / 16;
   }
-
   result[total_length - 1] = '\0';
+  //   while (num > 0) {
+  //     int ost = num % 16;
+  //     char repa;
+
+  //     if (ost > 9) {
+  //       repa = char(64 + (ost - 9));
+  //     } else {
+  //       repa = char(48 + ost);
+  //     }
+
+  //     result[i] = repa;
+  //     num = num / 16;
+  //     i = i - 1;
+  //   }
 
   return result;
 }
 
-int main() { std::cout << intTohex(1000) << std::endl; }
+int main() { std::cout << intTohex(0x7FFFFFFF) << std::endl; }
